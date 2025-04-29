@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo</title>
     <style>
-        body, html{
-            overflow-x: hidden;
-        }
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #f3f3f3;
+      }
+
       section {
         display: flex;
         flex-direction: column;
@@ -16,258 +24,267 @@
         background-color: #2f0975;
         color: white;
         border-radius: 10px;
-        margin: 10px 500px;
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 600px;
+        width: 90%;
       }
+
       #div-1 {
         color: black;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-evenly;
         align-content: center;
         gap: 5px;
-        margin: 5px;
+        margin: 5px 0;
       }
+
+      #div-1 div {
+        background-color: #d0c5e3;
+        border-radius: 10%;
+        width: 50px;
+        height: 50px;
+        line-height: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+      }
+
+      #div-1-3 {
+        background-color: #9768ed !important;
+      }
+
       h1 {
         margin-left: 10px;
+        font-size: 24px;
       }
-      #div-1-1 {
-        background-color: #d0c5e3;
-        border-radius: 10%;
-        width: 50px;
-        height: 50px;
-        line-height: 5px;
-      }
-      #div-1-2 {
-        background-color: #d0c5e3;
-        border-radius: 10%;
-        width: 50px;
-        height: 50px;
-        line-height: 5px;
-      }
-      #div-1-3 {
-        background-color: #9768ed;
-        border-radius: 10%;
-        width: 50px;
-        height: 50px;
-        line-height: 5px;
-      }
-      #div-1-4 {
-        background-color: #d0c5e3;
-        border-radius: 10%;
-        width: 50px;
-        height: 50px;
-        line-height: 5px;
-      }
-      #div-1-5 {
-        background-color: #d0c5e3;
-        border-radius: 10%;
-        width: 50px;
-        height: 50px;
-        line-height: 5px;
-      }
-      #div-1-6 {
-        background-color: #d0c5e3;
-        border-radius: 10%;
-        width: 50px;
-        height: 50px;
-        line-height: 5px;
-      }
-      #div-1-7 {
-        background-color: #d0c5e3;
-        border-radius: 10%;
-        width: 50px;
-        height: 50px;
-        line-height: 5px;
-      }
+
       p {
         margin-left: 10px;
       }
+
       h3 {
         margin-left: 10px;
       }
+
       #to-div {
         line-height: 4px;
       }
+
       #to-div p {
         font-size: 12px;
       }
+
       #todos {
         display: flex;
         flex-direction: column;
-        line-height: 1px;
-        gap: 3px;
-        margin-bottom: 2px;
+        gap: 5px;
+        margin-bottom: 10px;
       }
+
       #todos div {
         background-color: #d0c5e3;
-        margin: 0 5px 0 5px;
+        margin: 0 5px;
+        padding: 5px;
+        border-radius: 5px;
         color: #2f0975;
-        /* height: 60px;
-        line-height: 0px; */
-        
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
       }
+
       #todos p {
         font-size: 13px;
       }
+
       #todos .text {
         font-size: 18px;
       }
+
       button {
         background-color: #d0c5e3;
-        width: 50px;
-        height: 30px;
         color: #2f0975;
-        margin-left: 10px;
-        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      button:hover {
+        background-color: #c2b6da;
+      }
+
+      #second-btn {
+        height: 25px;
+        width: auto;
         display: flex;
         align-items: center;
-        justify-items: center;
-        border-radius: 5px;
-        margin-top: 2px;
+        justify-content: center;
+        font-size: 12px;
       }
+
       #placeholder {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-content: center;
+        gap: 5px;
+        margin-top: 10px;
       }
+
       #input {
-        height: 20px;
-        padding: 3.5px;
+        flex: 1;
+        min-width: 120px;
+        padding: 5px;
+        height: 30px;
         border-radius: 5px;
+        font-size: 14px;
+        border: 1px solid #ccc;
       }
+
+      #timeInput {
+        height: 30px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+
       .done {
         text-decoration: line-through;
         opacity: 0.6;
-     }
-     #timeInput{
-        width: 50px;
-        height: 25px;
-        margin-top: 2px;
-        margin-left: 2px;
-     }
-     #second-btn{
-        height: 18px;
-        width: 42px;
-        display: flex;
-        text-align: center;
-        justify-content: center;
-     }
+      }
 
-     
-     
-    
+      @media (max-width: 600px) {
+        section {
+          padding: 15px;
+        }
+
+        h1 {
+          font-size: 20px;
+          text-align: center;
+        }
+
+        #div-1 {
+          justify-content: center;
+        }
+
+        #todos div {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        #placeholder {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        #input, #timeInput, #addButton {
+          width: 100%;
+        }
+
+        button {
+          font-size: 14px;
+        }
+
+        #second-btn {
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
     <section>
       <h1>To-Do List</h1>
-      <div id="div-1">
-      </div>
-      <div id="to-div">
-      </div>
+      <div id="div-1"></div>
+      <div id="to-div"></div>
       <div id="todos"></div>
       <div id="placeholder">
         <input id="input" type="text" placeholder="new-task">
         <input id="timeInput" type="time">
         <button type="button" id="addButton">Add</button>
-    </div>
+      </div>
     </section>
     <script>
-        let todoItems = document.querySelector("#div-1");
-  todoItems.innerHTML = `
-    <div id="div-1-1"><p>29</p><p>mon</p></div>
-    <div id="div-1-2"><p>30</p><p>tue</p></div>
-    <div id="div-1-3"><p>01</p><p>wed</p></div>
-    <div id="div-1-4"><p>02</p><p>thu</p></div>
-    <div id="div-1-5"><p>03</p><p>fri</p></div>
-    <div id="div-1-6"><p>04</p><p>sat</p></div>
-    <div id="div-1-7"><p>05</p><p>sun</p></div>
-  `;
-  // This finds the div with id div-1.
-// It fills it with 7 small blocks, each showing a date and a day (like "29 Mon", "30 Tue", etc.).
+      let todoItems = document.querySelector("#div-1");
+      todoItems.innerHTML = `
+        <div id="div-1-1"><p>29</p><p>mon</p></div>
+        <div id="div-1-2"><p>30</p><p>tue</p></div>
+        <div id="div-1-3"><p>01</p><p>wed</p></div>
+        <div id="div-1-4"><p>02</p><p>thu</p></div>
+        <div id="div-1-5"><p>03</p><p>fri</p></div>
+        <div id="div-1-6"><p>04</p><p>sat</p></div>
+        <div id="div-1-7"><p>05</p><p>sun</p></div>
+      `;
 
+      let todoList = document.querySelector("#to-div");
+      todoList.innerHTML = `<h3>Today</h3><p>wed, June 01</p>`;
 
-  let todoList = document.querySelector("#to-div");
-  todoList.innerHTML = `<h3>Today</h3><p>wed, June 01</p>`;
+      let todoLabel = document.querySelector("#todos");
+      let initialTodos = [];
 
+      initialTodos.forEach((todo) => {
+        let id = new Date().getTime();
 
-// This finds the div with id to-div.
-// It fills it with the word "Today" and today's date.
+        let newTodo = document.createElement("div");
+        newTodo.className = "newTo";
+        newTodo.innerHTML = `
+          <p>${todo.time}</p>
+          <input type="checkbox" class="select" onclick="check(${id})" id="${id}">
+          <span>${todo.text}</span>
+          <button onclick="deleteTodo(${id})" id="second-btn">Delete</button>
+        `;
+        todoLabel.appendChild(newTodo);
+      });
 
+      let input = document.querySelector("#input");
+      let timeInput = document.querySelector("#timeInput");
+      let addBtn = document.querySelector("#addButton");
 
+      addBtn.addEventListener("click", addBtnFn);
 
-    let todoLabel = document.querySelector("#todos");
-// Array of initial todos
-    let initialTodos = [];
-      // { time: "8:00 AM", text: "Make and take egg and coffee" },
-      // { time: "9:30 AM", text: "Prepare presentation" },
-      // { time: "10:00 AM", text: "Meeting with the Board Of Directors" },
-      // { time: "3:00 PM", text: "Grocery shopping" },
-      // { time: "5:00 PM", text: "Visit Mom" },
-      // { time: "8:00 PM", text: "Party at the club" },
-      // { time: "10:00 PM", text: "Already home in bed" }
-    // ];
+      function addBtnFn() {
+        let id = new Date().getTime();
 
-// Generate the old todos
-initialTodos.forEach((todo) => {
-  let id = new Date().getTime(); //+ Math.random(); // Generate unique ID
+        if (input.value.trim() === "") {
+          alert("Please write a task!");
+          return;
+        }
 
-  let newTodo = document.createElement("div");
-  newTodo.className="newTo"
-  newTodo.innerHTML = `
-    <p>${todo.time}</p>
-    <input type="checkbox" class="select" onclick="check(${id})" id="${id}">
-    <span>${todo.text}</span>
-    <button onclick="deleteTodo(${id})" id="second-btn">Delete</button>
-  `;
-  todoLabel.appendChild(newTodo);
-});
+        let time = timeInput.value || "No time";
 
-// Now your addBtnFn function (for new todos) remains same
-let input = document.querySelector("#input");
-let timeInput = document.querySelector("#timeInput");
-let addBtn = document.querySelector("#addButton");
+        let newTodo = document.createElement("div");
+        newTodo.className = "newTo";
+        newTodo.innerHTML = `
+          <p>${time}</p>
+          <input type="checkbox" class="select" onclick="check(${id})" id="${id}">
+          <span>${input.value}</span>
+          <button onclick="deleteTodo(${id})" id="second-btn">Delete</button>
+        `;
 
-addBtn.addEventListener("click", addBtnFn);
+        todoLabel.appendChild(newTodo);
 
-function addBtnFn() {
-  let id = new Date().getTime();
+        input.value = "";
+        timeInput.value = "";
+      }
 
-  if (input.value.trim() === "") {
-    alert("Please write a task!");
-    return;
-  }
+      function check(id) {
+        let input = document.getElementById(id);
+        let item = input.nextElementSibling;
+        item.classList.toggle("done");
+      }
 
-  let time = timeInput.value || "No time"; // if empty, default to "No time"
-
-  let newTodo = document.createElement("div");
-  newTodo.className="newTo"
-  newTodo.innerHTML = `
-    <p>${timeInput.value}</p>
-    <input type="checkbox" class="select" onclick="check(${id})" id="${id}">
-    <span>${input.value}</span>
-    <button onclick="deleteTodo(${id})">Del</button>
-  `;
-
-  
-  todoLabel.appendChild(newTodo);
-  
-  input.value = "";
-  timeInput.value = "";
-}
-
-function check(id) {
-  let input = document.getElementById(id);
-  let item = input.nextElementSibling;
-  item.classList.toggle("done");
-}
-
-function deleteTodo(id) {
-  let item = document.getElementById(id);
-  if (item) {
-    item.parentElement.remove();
-  }
-}
-
-</script>
-</body>
+      function deleteTodo(id) {
+        let item = document.getElementById(id);
+        if (item) {
+          item.parentElement.remove();
+        }
+      }
+    </script>
+  </body>
 </html>
